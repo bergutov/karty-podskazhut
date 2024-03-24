@@ -1,22 +1,21 @@
-:root {
-  --main-font: raleway;
-  --accent-font: 'STIX Two Text';
-  --bg-color: #f3efec;
-  --text-color: #312a4e;
-  --accent-color: #ffab6b;
-}
-
-
-.theme_dark {
-  --bg-color: #171717;
-  --text-color: #b3b3b3;
-  --accent-color: transparent;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+::root {
+  --bg-color: #f3efec;
+  --text-color: #312a4e;
+  --accent-color: #ffAb6b;
+  --main-font: "Raleway";
+  --accent-font: "STIX Two Text";
+}
+
+.theme_dark {
+  --bg-color: #171717;;
+  --text-color: #b3b3b3;;
+  --accent-color: transparent;
 }
 
 .page {
@@ -53,10 +52,6 @@ button:disabled {
   pointer-events: none;
 }
 
-.content-section {
-  padding: 0 5vi;
-}
-
 .heading {
   font-family: var(--accent-font, serif);
   font-weight: 600;
@@ -64,6 +59,9 @@ button:disabled {
   text-align: center;
 }
 
+.content-section {
+  padding: 0 5vi;
+}
 
 .header {
   padding-block-start: 10%;
@@ -73,59 +71,6 @@ button:disabled {
   margin-block-end: 40px;
   font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
 }
-
-.header__menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-block-start: 1px solid currentColor;
-  border-block-end: 1px solid currentColor;
-  padding-block: 20px;
-}
-
-.header__theme-toggler {
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  list-style: none;
-}
-
-.header__theme-button {
-  position: relative;
-  border: none;
-  padding: 0;
-  color: currentColor;
-  font-family: inherit;
-  font-size: 18px;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-
-
-.header__theme-button:hover {
-  text-decoration: underline;
-}
-
-.header__theme-button_is-active {
-  font-weight: 700;
-}
-
-.header__theme-button_is-active::after {
-  content: '';
-  width: 72px;
-  height: 6px;
-
-  display: block;
-  position: absolute;
-  left: 0px;
-  top: 10px;
-  z-index: -1;
-
-  background-color: var(--accent-color);
-}
-
-
 
 .content__title {
   margin: 7% 0 2.5%;
@@ -161,7 +106,7 @@ button:disabled {
 }
 
 .content__list li:not(:last-of-type) {
-  margin-block-end: 10px;
+  margin-bottom: 10px;
 }
 
 .content__list li::before {
@@ -184,7 +129,7 @@ button:disabled {
   padding: 0 4px;
   font-weight: 700;
   font-size: 30px;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ffAb6b);
 }
 
 .content__picture {
@@ -234,9 +179,55 @@ button:disabled {
   z-index: -1;
   inline-size: calc(100% + 8px);
   block-size: 0.5ch;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ffAb6b);
   inset-block-end: 0.3ch;
   inset-inline-start: -4px;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-block-start: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
+  padding-block: 20px;
+}
+
+.header__theme-toggler {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.header__theme-button {
+  position: relative;
+  border: none;
+  padding: 0;
+  color: currentColor;
+  font-family: inherit;
+  font-size: 18px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-button_is-active {
+  font-weight: 700;
+}
+
+.header__theme-button_is-active::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inline-size: calc(100% + 8px);
+  block-size: 0.5ch;
+  background-color: var(--accent-color, #ffAb6b);
+  inset-block-end: 0.3ch;
+  inset-inline-start: -4px;
+}
+
+.header__theme-button:hover {
+  text-decoration: underline;
 }
 
 .footer {
@@ -250,12 +241,12 @@ button:disabled {
   font-size: 18px;
 }
 
-.theme_dark .colored-text::after{
+.theme_dark .colored-text::after {
   background-image: url(../images/pattern.svg);
 }
 
 .theme_dark .header__theme-button_is-active::after {
-  background-image: url(..//images/pattern.svg);
+  background-image: url(../images/pattern.svg);
 }
 
 .theme_dark .content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
@@ -263,13 +254,5 @@ button:disabled {
 }
 
 .theme_dark .content__list li::before {
-  background-image: url(..//images/marker-dark.svg);
+  background-image: url(../images/marker-dark.svg);
 }
-
-
-
-
-
-
-
-
